@@ -5,19 +5,20 @@ import {
 import React from 'react';
 import Books from './components/books/book';
 import Categories from './components/categories/category';
+import './app.css';
 
 class App extends React.Component {
   render() {
     return (
       <Router>
         <div>
-          <nav>
+          <nav className="navbar">
             <div>
               <span>
-                <Link to="/">Books</Link>
+                <Link to="/" className="nav-link">Books</Link>
               </span>
               <span>
-                <Link to="/categories">Categories</Link>
+                <Link to="/categories" className="nav-link">Categories</Link>
               </span>
             </div>
           </nav>
