@@ -1,21 +1,31 @@
-/* eslint-disable no-unused-expressions */
-const ADD = 'bookstore/books/add';
-const booksReducerDefaultState = [];
+const ADD_BOOK = 'bookStore/books/ADD_BOOK';
+const REMOVE_BOOK = 'bookStore/books/REMOVE_BOOK';
+const initialState = [];
 
-export default (state = booksReducerDefaultState, action) => {
+export const addBook = (payload) => ({
+  type: ADD_BOOK,
+  payload,
+});
+
+export const removeBook = (payload) => ({
+  type: REMOVE_BOOK,
+  payload,
+});
+
+export default (state = initialState, action) => {
   switch (action.type) {
-    case ADD:
+    case ADD_BOOK:
       return [
-        ...state.books,
-        action.book,
+        ...state.filter((book) => book.id !== action.payload.id),
+        action.payload,
+      ];
+
+    case REMOVE_BOOK:
+      return [
+        ...state.filter((book) => book.id !== action.payload),
       ];
 
     default:
       return state;
   }
-};
-
-export const add = (book) => {
-  ADD;
-  book;
 };

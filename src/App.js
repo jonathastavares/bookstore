@@ -3,7 +3,7 @@ import {
   BrowserRouter as Router, Route, Routes, Link,
 } from 'react-router-dom';
 import React from 'react';
-import Books from './components/books/book';
+import Books from './components/books/books';
 import Categories from './components/categories/category';
 import './app.css';
 
