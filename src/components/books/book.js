@@ -1,24 +1,47 @@
-import React, { useState } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { removeBook } from '../../redux/books/books';
 
-const Books = () => {
-  const [books] = useState([]);
+const Book = ({ book }) => {
+  const { id, title, author } = book;
+  const dispatch = useDispatch();
+
+  const handleRemoveBook = () => {
+    dispatch(removeBook(id));
+  };
 
   return (
     <div>
-      {books.map((book) => (
-        <div key={book.id}>{book}</div>
-      ))}
-      <button type="button">Remove</button>
+      <div>
+        Title:
+        {title}
+      </div>
 
-      <form>
-        <label htmlFor="add-book">
-          ADD NEW BOOK
-          <input type="text" id="add-book" />
-        </label>
-        <button type="button">ADD BOOK</button>
-      </form>
+      <div>
+        Author:
+        {author}
+      </div>
+
+      <button onClick={handleRemoveBook} type="button">Remove</button>
     </div>
   );
 };
 
-export default Books;
+Book.defaultProps = {
+  book: {
+    id: '',
+    title: '',
+    author: '',
+  },
+};
+
+Book.propTypes = {
+  book: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    author: PropTypes.string,
+  }),
+};
+
+export default Book;
