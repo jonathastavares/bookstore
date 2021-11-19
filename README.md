@@ -3,7 +3,7 @@
 # Bookstore
 
 - This project was built for learning purposes.
-- This is Math Magicians Website built using React, Redux, and Javascript.
+- This is Bookstore Website built using React, Redux, and Javascript.
 - In this project you can store books, and remove them from your list!
 
 ## Built With
