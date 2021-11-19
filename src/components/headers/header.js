@@ -9,11 +9,11 @@ const Header = () => (
       <nav>
         <ul className={classes.listContainer}>
           <li className={classes.listItem}>
-            <NavLink to="/books" className={classes.navLink} activeClassName="is-active" exact>Books</NavLink>
+            <NavLink to="/" className={classes.navLink}>Books</NavLink>
           </li>
 
           <li className={classes.listItem}>
-            <NavLink to="/categories" className={classes.navLink} activeClassName="is-active" exact>Categories</NavLink>
+            <NavLink to="/categories" className={classes.navLink}>Categories</NavLink>
           </li>
         </ul>
       </nav>

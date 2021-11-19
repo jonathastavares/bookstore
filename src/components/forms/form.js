@@ -8,14 +8,17 @@ const Form = () => {
   const dispatch = useDispatch();
   const [bookTitle, setBookTitle] = useState('');
   const [bookCategory, setBookCategory] = useState('');
+
   const bookTitleHandle = (e) => {
     const title = e.target.value;
     setBookTitle(title);
   };
+
   const bookCategoryHandle = (e) => {
     const author = e.target.value;
     setBookCategory(author);
   };
+
   const submitBookToStore = (e) => {
     e.preventDefault();
     const newBook = {
@@ -24,6 +27,7 @@ const Form = () => {
       category: bookCategory,
     };
     dispatch(addBook(newBook));
+
     setBookTitle('');
     setBookCategory('');
   };
