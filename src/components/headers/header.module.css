@@ -29,6 +29,8 @@
 .navLink {
   text-decoration: none;
   color: #1212125b;
+  font-size: 0.65em;
+  font-weight: 600;
 }
 
 i {

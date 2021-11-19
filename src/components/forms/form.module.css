@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
+
 .formSection {
-  margin: 0 auto;
+  margin: 1em 5em;
 }
 
 .line {
@@ -13,11 +16,13 @@
 }
 
 .addNewBook {
+  font-family: 'Montserrat', sans-serif;
   color: #888;
 }
 
 .inputsContainer {
   display: flex;
+  justify-content: center;
   margin-bottom: 5rem;
 }
 
@@ -25,10 +30,10 @@
   width: 41.5rem;
   height: 2.813rem;
   margin: 1.188rem 2.125rem 0 0;
+  padding: 0.813rem 35.688rem 0.813rem 1.063rem;
   border-radius: 4px;
   border: solid 1px #e8e8e8;
   background-color: #fff;
-  font-size: 1rem;
 }
 
 .inputTitle::placeholder {
@@ -43,13 +48,13 @@
 }
 
 .inputCategory {
-  width: 41.5rem;
+  width: 17.813rem;
   height: 2.813rem;
-  margin: 1.188rem 2.125rem 0 0;
+  margin: 1.188rem 2.125rem 0;
+  padding: 0.375rem 0.938rem 0.563rem 1rem;
   border-radius: 4px;
   border: solid 1px #e8e8e8;
   background-color: #fff;
-  font-size: 1rem;
 }
 
 .inputCategory::placeholder {
@@ -72,4 +77,6 @@
   background-color: #0290ff;
   color: #fff;
   border: none;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 900;
 }

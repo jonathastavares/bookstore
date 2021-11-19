@@ -69,7 +69,7 @@ const Book = ({ book }) => {
       </div>
 
       <div className={classes.chapterContainer}>
-        <span className={classes.currentChapter}>Current Chapter</span>
+        <span className={classes.currentChapter}>CURRENT CHAPTER</span>
         <span className={classes.chapter}>
           Chapter
           {' '}
