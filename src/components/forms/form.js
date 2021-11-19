@@ -2,53 +2,46 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuid } from 'uuid';
 import { addBook } from '../../redux/books/books';
+import classes from './form.module.css';
 
 const Form = () => {
   const dispatch = useDispatch();
   const [bookTitle, setBookTitle] = useState('');
-  const [bookAuthor, setBookAuthor] = useState('');
+  const [bookCategory, setBookCategory] = useState('');
   const bookTitleHandle = (e) => {
     const title = e.target.value;
     setBookTitle(title);
   };
-
-  const bookAuthorHandle = (e) => {
+  const bookCategoryHandle = (e) => {
     const author = e.target.value;
-    setBookAuthor(author);
+    setBookCategory(author);
   };
-
   const submitBookToStore = (e) => {
     e.preventDefault();
     const newBook = {
       id: uuid(),
       title: bookTitle,
-      author: bookAuthor,
+      category: bookCategory,
     };
     dispatch(addBook(newBook));
     setBookTitle('');
-    setBookAuthor('');
+    setBookCategory('');
   };
 
   return (
-    <form onSubmit={submitBookToStore}>
-      <div>
-        <div>
-          <label htmlFor="title">
-            Book Title
-            <input type="text" id="title" value={bookTitle} onChange={bookTitleHandle} />
-          </label>
+    <div className={classes.formSection}>
+      <div className={classes.line} />
+      <form onSubmit={submitBookToStore}>
+        <div className={classes.formContainer}>
+          <h2 className={classes.addNewBook}>ADD NEW BOOK</h2>
+          <div className={classes.inputsContainer}>
+            <input className={classes.inputTitle} type="text" id="title" value={bookTitle} onChange={bookTitleHandle} placeholder="Book Title" />
+            <input className={classes.inputCategory} type="text" id="category" value={bookCategory} onChange={bookCategoryHandle} placeholder="Book Category" />
+            <button className={classes.formButton} type="submit">ADD BOOK</button>
+          </div>
         </div>
-        <div>
-          <label htmlFor="author">
-            Book Author
-            <input type="text" id="author" value={bookAuthor} onChange={bookAuthorHandle} />
-          </label>
-        </div>
-      </div>
-      <div>
-        <button type="submit">Submit</button>
-      </div>
-    </form>
+      </form>
+    </div>
   );
 };
 
