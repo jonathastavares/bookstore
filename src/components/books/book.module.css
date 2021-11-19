@@ -8,6 +8,17 @@
   padding: 1.5rem;
 }
 
+.formSection {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
 .bookInfoContainer {
   display: flex;
   flex-direction: column;
