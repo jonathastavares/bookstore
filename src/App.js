@@ -12,22 +12,8 @@ class App extends React.Component {
   render() {
     return (
       <Router>
-<<<<<<< HEAD
-        <div>
-          <nav className="navbar">
-            <div>
-              <span>
-                <Link to="/" className="nav-link">Books</Link>
-              </span>
-              <span>
-                <Link to="/categories" className="navlink">Categories</Link>
-              </span>
-            </div>
-          </nav>
-=======
         <Header />
         <main>
->>>>>>> development
           <Routes>
             <Route exact path="/" element={<Books />} />
             <Route exact path="/categories" element={<Categories />} />
